@@ -20,24 +20,24 @@ Project breakdown :
 * Implement automated CI/CD for the front end
 * Implement automated CI/CD for the back end
 
-##### Create a website using HTML5/CSS 
+### Create a website using HTML5/CSS 
 
 This project uses a bootstrap project with pre defined index.html. Changes are done to reflect personalizing the html content to your website. 
 Directory structure follows index.html, css, js and src/img
 
 The CI Pipeline will be used further to make all changes to the html code 
 
-##### Host the site using S3 
+### Host the site using S3 
 
-###### Pre-requisites 
+##### Pre-requisites 
 
 This project requires an AWS account with awscli configured with an IAM role access id and secret key which will have permissions to the needed AWS services : 
 S3, Cloudfront, Lambda 
 
-'''
+```
 aws --version
 aws-cli/2.1.36 Python/3.8.8 Darwin/19.6.0 exe/x86_64 prompt/off
-'''
+```
 
 1. Create 2 S3 buckets : Name each of this bucket : domain.com and www.domain.com , in this example : adityalolla.com and www.adityalolla.com 
 2. De-select the block public access when creating the buckets. Note : All contents of the bucket adityalolla.com will can be read by anyone publically 
