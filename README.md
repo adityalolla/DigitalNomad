@@ -90,4 +90,21 @@ upload: startbootstrap-resume-gh-pages/assets/img/profile.jpg to s3://adityaloll
 
 We will use Route53 for buying the custom domain, creating records for IPv4 and IPv6 using Simple routing and also setting up health checks with Route53. 
 
+1. Open Route53 on AWS console 
+2. Find and register an available domain -> This will ask you for contact details, fill them out and usually takes about 4 hours for the domain to be available 
+3. For each domain that you own, AWS will automatically create a hosted zone for you. 
+4. Navigate to the hosted zone created for the new domain. You will already see 2 default entries for NS (name sever) and SOA (Start of authority)
+5. These are created by default from AWS when you register a new domain via Route53 
+6. We will need to create 2 more records for your hosted zone adityalolla.com 
+7. Create record via simple routing protocol : First record leave the record name empty and select the route traffic to S3 in the search box, choose the region and select the bucket name adityalolla.com resource 
+8. Likewise, for the second record under the record name give www 
+9. For this record select the bucket www.adityalolla.com 
+10. You should have a total of 4 records for your hosted zone once you complete 
+
+We are using two buckets here : the root will be adityalolla.com and we will use the re-direction bucket as www.adityalolla.com ; this means when someone types www.adityalolla.com , the second bucket will re-direct requests to the root. 
+
+```
+If both steps are completed successfully; adityalolla.com should load your website for you on the browser 
+``` 
+
 
