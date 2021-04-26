@@ -49,7 +49,7 @@ aws-cli/2.1.36 Python/3.8.8 Darwin/19.6.0 exe/x86_64 prompt/off
 6. Specify the index document as index.html 
 7. Save the changes  
 
-![image](https://user-images.githubusercontent.com/81785727/116139869-5dd77b80-a68b-11eb-87c0-aa2d76d0d138.png =250x250)
+<img src="https://user-images.githubusercontent.com/81785727/116139869-5dd77b80-a68b-11eb-87c0-aa2d76d0d138.png" width="100" height="100">
 
 #### S3 Bucket policy :
 
