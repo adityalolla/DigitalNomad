@@ -1,13 +1,14 @@
 # DigitalNomad
-App packages for online resume 
+Project to host website on S3, setup CDN with AWS CloudFront, interactive visitor count with DynamoDB and AWS Lambda. 
+Establish CI/CD Pipeline with build automation tests, deploy the stack using IaC 
 
 ## Static website hosting with S3 
 
 Project breakdown : 
 
-* Create a resume website using HTML - index.html -> Ready
-* Use CSS to style the site - In progress
-* Host the site using AWS S3 - Done
+* Create a resume website using HTML5
+* Use CSS to style the site 
+* Host the site using AWS S3 
 * Use HTTPS for security, using an AWS CloudFront distribution
 * Buy a custom domain name and set up the DNS using AWS Route 53
 * Write some JavaScript to create a hit counter for the site
@@ -48,6 +49,8 @@ aws-cli/2.1.36 Python/3.8.8 Darwin/19.6.0 exe/x86_64 prompt/off
 6. Specify the index document as index.html 
 7. Save the changes  
 
+![image](https://user-images.githubusercontent.com/81785727/116139869-5dd77b80-a68b-11eb-87c0-aa2d76d0d138.png)
+
 #### S3 Bucket policy :
 
 ```
@@ -82,5 +85,9 @@ upload: startbootstrap-resume-gh-pages/css/styles.css to s3://adityalolla.com/cs
 upload: startbootstrap-resume-gh-pages/assets/img/profile1.jpg to s3://adityalolla.com/assets/img/profile1.jpg
 upload: startbootstrap-resume-gh-pages/assets/img/profile.jpg to s3://adityalolla.com/assets/img/profile.jpg
 ```
+
+### Buy a custom domain name and set up the DNS using AWS Route 53 
+
+We will use Route53 for buying the custom domain, creating records for IPv4 and IPv6 using Simple routing and also setting up health checks with Route53. 
 
 
