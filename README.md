@@ -107,4 +107,42 @@ We are using two buckets here : the root will be adityalolla.com and we will use
 If both steps are completed successfully; adityalolla.com should load your website for you on the browser 
 ``` 
 
+### Setting up SSL Cert with ACM : 
+
+1. Request a public certificate 
+2. Under domain names add : adityalolla.com and www.adityalolla.com 
+3. It will create CNAME records and values and also gives you the option to automatically add them to route 53, click on that option 
+4. For both domains it will add one CNAME record in Route 53 
+
+Wait for the public cert to be available. 
+
+
+### Setting up a Cloudfront distribution 
+
+We will be creating 2 Cloudfront distributions : One for the source index.html and the other distribution for re-direction 
+
+You will need the source bucket adityalolla.com s3://uri which can be collected from the S3 bucket properties. Enter this WITHOUT the http:// 
+In this case it is : adityalolla.com.s3-website-us-west-1.amazonaws.com ; This will be the Cross origin domain name for the first distribution 
+
+##### Set the following : 
+1. Viewer protocol policy : Redirect http to https 
+2. SSL Certificate : Choose the certificate name from the previous step 
+3. Alternate domain name : adityalolla.com (Likewise use www.adityalolla.com when you create the second distribution)  
+4. Wait for the distribution status to change to : Deployed 
+
+### Route 53 : 
+
+We will need to edit the route 53 record sets to point to our newly created cloudfront distributions and not to our source S3 buckets 
+
+1. Delete the A records for the S3 buckets 
+2. Create a new record with Simple routing and A record 
+3. Leave the record name empty for adityalolla.com and enter www when creating the second A record 
+4. Under route traffic to : Choose : Alias to cloudfront distribution 
+5. Take the domain name of the cloudfront distribution (You can see this by going to the Cloudfront distribution) 
+6. For now you can set the evaluate heakth of target to NO 
+
+
+
+
+
 
