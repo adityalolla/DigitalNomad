@@ -141,7 +141,9 @@ We will need to edit the route 53 record sets to point to our newly created clou
 5. Take the domain name of the cloudfront distribution (You can see this by going to the Cloudfront distribution) 
 6. For now you can set the evaluate heakth of target to NO 
 
+In total now your Route 53 Hosted zone will contain 5 entries : 
 
+Name servers, CNAME for your ACM cert, 2 A records for adityalolla.com and www.adityalolla.com and 1 Start of Authority SOA for your DNS
 
 
 
