@@ -1,6 +1,6 @@
 # DigitalNomad
 Project to host website on S3, setup CDN with AWS CloudFront, interactive visitor count with DynamoDB and AWS Lambda. 
-Establish CI/CD Pipeline with build automation tests, deploy the stack using IaC 
+Establish CI/CD Pipelines for front and backend with build automation tests, deploy the stack using IaC 
 
 ## Static website hosting with S3 
 
